@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package ="./";
+package  proto;
+
+service Monitor {
+    rpc GetCount(Empty) returns (CountResponse);
+    rpc GetState(Empty) returns (StateResponse);
+    rpc GetLocation(Empty) returns (LocatioinResponse);
+}
+
+message Empty {}
+
+message CountResponse {
+    int32 count = 1;
+}
+
+message StateResponse {
+    string state = 1;
+}
+
+
+message LocatioinResponse {
+    string location = 1;
+}
